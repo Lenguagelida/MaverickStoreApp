@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from './components/navegacion/NavBar';
+import NavBar from './components/NavBar';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
 
@@ -8,7 +8,7 @@ function App() {
     <div>
       <NavBar/>
       <Header/>
-      <ItemListContainer/>
+      <ItemListContainer texto="Catalogo de productos"/>
     </div>
   );
 }
