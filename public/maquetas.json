@@ -1,0 +1,172 @@
+{
+	"lista":[
+	{
+		"id": 1,
+		"nombre": "F-16F Fighting Falcon Block 60",
+		"marca": "Hasegawa",
+		"escala": "1/72",
+		"precio": 18000,
+		"image": "/assets/cards/f16d fighting falcon.jpg"
+	},
+	{
+		"id": 2,
+		"nombre": "F-18D Hornet Night Attack",
+		"marca": "Hasegawa",
+		"escala": "1/48",
+		"precio": 24000,
+		"image": "/assets/cards/f18d hornet night attack.jpg"
+	},
+	{
+		"id": 3,
+		"nombre": "F-14A Tomcat Atlantic Fleet Squadrons",
+		"marca": "Hasegawa",
+		"escala": "1/72",
+		"precio": 19700,
+		"image": "/assets/cards/f14a tomcat Atlantic fleet squadrons.jpg"
+	},
+	{
+		"id": 4,
+		"nombre": "Messerschmitt Me262A ISS1",
+		"marca": "Hasegawa",
+		"escala": "1/32",
+		"precio": 23000,
+		"image": "/assets/cards/me262a iss1.jpg"
+	},
+	{
+		"id": 5,
+		"nombre": "F-15C Eagle",
+		"marca": "Revell",
+		"escala": "1/48",
+		"precio": 27000,
+		"image": "/assets/cards/f15c eagle.jpg"
+	},
+	{
+		"id": 6,
+		"nombre": "F-15DJ Eagle Aggressor Minokasago",
+		"marca": "Hasegawa",
+		"escala": "1/72",
+		"precio": 25000,
+		"image": "/assets/cards/f15dj eagle.png"
+	},
+	{
+		"id": 7,
+		"nombre": "Concorde British Airways",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 37000,
+		"image": "/assets/cards/concorde british airways.png"
+	},
+	{
+		"id": 8,
+		"nombre": "BAe HAWK T.1",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 10000,
+		"image": "/assets/cards/bae hawk t1.png"
+	},
+	{
+		"id": 9,
+		"nombre": "Bell P-39 Airacobra",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 6900,
+		"image": "/assets/cards/airacobra.png"
+	},
+	{
+		"id": 10,
+		"nombre": "Buccaneer S Mk.2b",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 17000,
+		"image": "/assets/cards/buccaneer s mk2b.png"
+	},
+	{
+		"id": 11,
+		"nombre": "P-26 Peashooter",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 5200,
+		"image": "/assets/cards/peashooter.png"
+	},
+	{
+		"id": 12,
+		"nombre": "RAH-66 Comanche",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 12000,
+		"image": "/assets/cards/comanche.png"
+	},
+	{
+		"id": 13,
+		"nombre": "Boeing X-32A JSF",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 14300,
+		"image": "/assets/cards/x32a.png"
+	},
+	{
+		"id": 14,
+		"nombre": "Dassault Mirage 2000D",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 13000,
+		"image": "/assets/cards/mirage 2000d.png"
+	},
+	{
+		"id": 15,
+		"nombre": "Mirage F.1C/CT",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 17000,
+		"image": "/assets/cards/mirage f1.png"
+	},
+	{
+		"id": 16,
+		"nombre": "Dassault-Dornier Alpha Jet E",
+		"marca": "Revell",
+		"escala": "1/72",
+		"precio": 11000,
+		"image": "/assets/cards/alpha jet.png"
+	},
+	{
+		"id": 17,
+		"nombre": "Bristol Beaufighter TF.X",
+		"marca": "Airfix",
+		"escala": "1/72",
+		"precio": 18000,
+		"image": "/assets/cards/beaufighter.png"
+	},
+	{
+		"id": 18,
+		"nombre": "Avro Vulcan B.2",
+		"marca": "Airfix",
+		"escala": "1/72",
+		"precio": 27000,
+		"image": "/assets/cards/avro vulcan.png"
+	},
+	{
+		"id": 19,
+		"nombre": "F/A-18F Super Hornet VX-23 Salty Dogs",
+		"marca": "Hasegawa",
+		"escala": "1/48",
+		"precio": 31000,
+		"image": "/assets/cards/f18f super hornet.png"
+	},
+	{
+		"id": 20,
+		"nombre": "A-4E/F Skyhawk Top Gun",
+		"marca": "Hasegawa",
+		"escala": "1/48",
+		"precio": 27500,
+		"image": "/assets/cards/skyhawk top gun.png"
+	},
+	{
+		"id": 21,
+		"nombre": "A-4F Skyhawk Blue Angels",
+		"marca": "Hasegawa",
+		"escala": "1/48",
+		"precio": 25500,
+		"image": "/assets/cards/skyhawk blue angels.png"
+	}
+]
+}
