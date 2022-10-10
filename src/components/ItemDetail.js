@@ -1,9 +1,9 @@
 import React from "react";
 
-const ItemDetail = () => {
+const ItemDetail = ({item}) => {
 	return(
         <div>
-            <h1>Item Detail</h1>
+            <h2>{item.nombre}</h2>
         </div>
     );
 };
