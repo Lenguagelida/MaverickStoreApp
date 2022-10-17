@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CartWidget = () => {
+    
     return (
             <button className="btn btn-outline-light mx-1">
                 <i className="bi-cart-fill me-1"></i>
