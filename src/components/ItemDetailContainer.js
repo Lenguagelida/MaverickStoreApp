@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import ListaCatalogo from '../maquetas.json'
+import { getFirestore, doc, getDoc} from 'firebase/firestore'
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -8,13 +8,17 @@ const ItemDetailContainer = () => {
 	const {itemId} = useParams();
 
 	useEffect(()=>{
-        const obtenerCatalogo = new Promise((resolve) => {
-            resolve(ListaCatalogo);
-        });
-		obtenerCatalogo.then(res => setItem(res.lista.find(maqueta=> maqueta.id === parseInt(itemId))));
-	},[]);
+		const dbItem = getFirestore();
+		const dbItemDoc = doc(dbItem, 'catalogo', itemId);
+		getDoc(dbItemDoc)
+			.then(response => setItem({id: response.id, ...response.data()}))
+	},[itemId]);
 
-	return <ItemDetail item={item} />;
+	return(
+
+		<ItemDetail item={item} />
+
+	);
 };
 
 export default ItemDetailContainer;

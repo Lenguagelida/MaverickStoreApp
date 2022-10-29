@@ -1,11 +1,13 @@
 import React from 'react';
+import './firebase/firebaseConfig';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import CarritoProvider from './contexts/CartContext';
+import Cart from './components/Cart';
+import {CarritoProvider} from './context/CartContext';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
             <Route exact path='/marcas/:marcaId' element={<ItemListContainer/>}/>
             {/* <Route exact path='/escalas' element={<ItemListContainer/>}/> */}
             <Route exact path='/detalle/:itemId' element={<ItemDetailContainer/>}/>
+            <Route exact path='/cart' element={<Cart/>}/>
           </Routes>
       </CarritoProvider>
     </BrowserRouter>

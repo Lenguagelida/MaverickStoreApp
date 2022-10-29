@@ -1,6 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
+import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount";
+import { UsarCarritoContexto } from "../context/CartContext";
 
 const ItemDetail = ({item}) => {
+
+    const [irCarrito, setIrCarrito] = useState(false);
+    const {agregarCarrito} = UsarCarritoContexto();
+
+    const cantidadCarrito = (cantidadItems) =>{
+        setIrCarrito(true);
+        agregarCarrito(item,cantidadItems)
+        console.log(`Agregaste ${cantidadItems} unidades de ${item.nombre}`);
+    };
+
 	return(
         <>
             <section className="py-5">
@@ -10,18 +23,22 @@ const ItemDetail = ({item}) => {
                         <div className="col-md-6">
                             <div className="small mb-1">ID: {item.id}</div>
                             <h1 className="display-5 fw-bolder">{item.nombre}</h1>
-                            <div className="fs-5 mb-5">
+                            <div className="fs-5 mb-3">
                                 <span>Escala: {item.escala} </span>
-                                <hr></hr>
+                                <hr/>
                                 <span>Precio: ${item.precio}</span>
                             </div>
-                            <p className="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
-                            <div className="d-flex">
-                                <button className="btn btn-outline-primary flex-shrink-0" type="button">
-                                    <i className="bi-cart-fill me-1"></i>
-                                    Agregar al carrito
-                                </button>
-                            </div>
+                            <p>{item.descripcion}</p>
+                            {
+                                irCarrito ? 
+                                <Link to='/cart'>
+                                    <button className="btn btn-outline-primary flex-shrink-0">
+                                    <i className="bi bi-cart-check-fill me-1"></i>
+                                    Ver carrito
+                                    </button>
+                                </Link> :
+                                <ItemCount cantInicial={1} stock={20} cantCarrito={cantidadCarrito} />
+                            }
                         </div>
                     </div>
                 </div>

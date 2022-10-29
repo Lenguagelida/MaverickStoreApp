@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ListaCatalogo from '../maquetas.json'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
@@ -10,17 +10,15 @@ const ItemListContainer = () => {
 
 
     useEffect(()=>{
-        const obtenerCatalogo = new Promise((resolve) => {
-            resolve(ListaCatalogo)
-        })
+        const db = getFirestore();
+        const dbCollection = collection(db, 'catalogo');
         if (marcaId) {
-            obtenerCatalogo.then(res => {
-                setCatalogo(res.lista.filter(maquetas => maquetas.marca === marcaId));
-            });
+            const dbCollectionFilter = query(dbCollection, where('marca','==',marcaId))
+            getDocs(dbCollectionFilter)
+                .then(response => setCatalogo(response.docs.map(producto => ({id: producto.id, ...producto.data()}))));
         } else {
-            obtenerCatalogo.then(res => {
-                setCatalogo(res.lista);
-            });
+            getDocs(dbCollection)
+            .then(response => setCatalogo(response.docs.map(producto => ({id: producto.id, ...producto.data()}))));
         }
     },[marcaId]);
 

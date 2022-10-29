@@ -1,10 +1,19 @@
-import React from 'react'
-import CartWidget from './CartWidget'
-import FavouriteWidget from './FavouriteWidget'
-import LoginWidget from './LoginWidget'
-import { NavLink,Link } from 'react-router-dom'
+import React, {useEffect, useState} from 'react';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import CartWidget from './CartWidget';
+import { NavLink,Link } from 'react-router-dom';
 
 const NavBar = () => {
+    const [marcas, setMarcas] = useState([]);
+
+    useEffect(()=>{
+        const db= getFirestore();
+        const dbMarcas = collection(db, 'marcas');
+        getDocs(dbMarcas)
+            .then(response => 
+                setMarcas((response.docs.map((marc)=>({id: marc.id,...marc.data()} )))))
+    },[]);
+    
     return (
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -16,9 +25,12 @@ const NavBar = () => {
                             <Link className="nav-link active" aria-current="page" to={`/`}>Inicio</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas</a>
+                            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas</a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
+                                {marcas.map((marca)=>
+                                    <NavLink className="dropdown-item" key={marca.id} to={`/marcas/${marca.nombre}`}>{marca.nombre}</NavLink>
+                                )}
+                                {/* <li>
                                     <NavLink className="dropdown-item" to={`/marcas/Airfix`}>Airfix</NavLink>
                                 </li>
                                 <li>
@@ -26,20 +38,12 @@ const NavBar = () => {
                                 </li>
                                 <li>
                                     <NavLink className="dropdown-item" to={`/marcas/Revell`}>Revell</NavLink>
-                                </li>
-                            </ul>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Escalas</a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#!">EN CONSTRUCCION</a></li>
+                                </li> */}
                             </ul>
                         </li>
                     </ul>
                     <div className="d-flex">
                         <CartWidget/> 
-                        <FavouriteWidget/>
-                        <LoginWidget/>
                     </div>
                 </div>
             </div>
