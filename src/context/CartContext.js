@@ -13,6 +13,9 @@ export const CarritoProvider = ({children}) => {
     const estaEnCarrito = (id) => carrito.some(producto => producto.id === id);
     //Devuelve true o false si existe el producto en el carrito
 
+    const removerDelCarrito = (id) => setCarrito(carrito.filter(item => item.id !== id));
+    //Filter me devuelve otro array sin el item que elegi remover y lo guardo en el estado
+
     const agregarCarrito = (producto,cantidad) => {
         if (estaEnCarrito(producto.id)){
             setCarrito(carrito.map(item =>{
@@ -30,11 +33,27 @@ export const CarritoProvider = ({children}) => {
     };
     console.log("El carrito: " , carrito);
 
-    const removerDelCarrito = (id) => setCarrito(carrito.filter(item => item.id !== id));
-    //Filter me devuelve otro array sin el item que elegi remover y lo guardo en el estado
-    
+    const totalItemsCarrito = (array)=>{
+        let totalItems = array.reduce((acumulador, producto) => acumulador + producto.cantidad, 0);
+        return totalItems;
+    };
+    //Contador de items totales en el carrito
+
+    const totalPrecioCarrito = (array) =>{
+        let totalPrecio = array.reduce((acumulador,producto) => acumulador + (producto.precio * producto.cantidad), 0);
+        return totalPrecio;
+    };
+    // Precio total del carrito
+
+    const subtotalPrecioProducto = (producto) => {
+        let subtotal = producto.precio * producto.cantidad;
+        return subtotal;
+    };
+
 	return (
-        <CarrritoContexto.Provider value={{vaciarCarrito, estaEnCarrito, agregarCarrito, removerDelCarrito, carrito, setCarrito}}>
+        <CarrritoContexto.Provider value={{
+            vaciarCarrito, estaEnCarrito, agregarCarrito, removerDelCarrito, totalItemsCarrito,
+            totalPrecioCarrito, subtotalPrecioProducto, carrito, setCarrito}}>
             {children} 
         </CarrritoContexto.Provider>
 )};

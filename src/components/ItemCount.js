@@ -17,7 +17,7 @@ export const ItemCount = ({cantInicial, stock, cantCarrito}) => {
         <div className="d-flex">
             <div className="mx-1">
                 <button className="btn btn-outline-primary flex-shrink-0" disabled={stock <=0} onClick={funcOnClick}>
-                    <i className="bi-cart-fill me-1"></i>
+                <i className="bi bi-cart-plus-fill"></i>
                     Agregar al carrito
                 </button>
             </div>

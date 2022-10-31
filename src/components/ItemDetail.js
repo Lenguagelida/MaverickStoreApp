@@ -31,12 +31,21 @@ const ItemDetail = ({item}) => {
                             <p>{item.descripcion}</p>
                             {
                                 irCarrito ? 
-                                <Link to='/cart'>
-                                    <button className="btn btn-outline-primary flex-shrink-0">
-                                    <i className="bi bi-cart-check-fill me-1"></i>
-                                    Ver carrito
-                                    </button>
-                                </Link> :
+                                <>
+                                    <Link to='/cart'>
+                                        <button className="btn btn-outline-primary flex-shrink-0 mx-1">
+                                            <i className="bi bi-cart-check-fill me-1"></i>
+                                            Ver carrito
+                                        </button>                                    
+                                    </Link>
+                                    <Link to='/'>
+                                        <button className="btn btn-outline-primary flex-shrink-0 mx-1">
+                                        <i className="bi bi-bag-fill me-1"></i>
+                                            Seguir comprando
+                                        </button>
+                                    </Link>
+                                </>
+                                :
                                 <ItemCount cantInicial={1} stock={20} cantCarrito={cantidadCarrito} />
                             }
                         </div>

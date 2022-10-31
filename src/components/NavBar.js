@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import CartWidget from './CartWidget';
 import { NavLink,Link } from 'react-router-dom';
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     const [marcas, setMarcas] = useState([]);
@@ -13,6 +13,7 @@ const NavBar = () => {
             .then(response => 
                 setMarcas((response.docs.map((marc)=>({id: marc.id,...marc.data()} )))))
     },[]);
+    // Traigo todas las marcas que hay en la coleccion de firestore
     
     return (
     <div>
