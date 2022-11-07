@@ -1,25 +1,29 @@
 import React from "react";
+import CartItem from "./CartItem";
 import { UsarCarritoContexto } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-	const {vaciarCarrito, removerDelCarrito, subtotalPrecioProducto, totalPrecioCarrito, carrito} = UsarCarritoContexto();
+	const {vaciarCarrito,totalPrecioCarrito,carrito} = UsarCarritoContexto();
 
 	return (
 		<>
-			<h1>Carrito:</h1>
-			<div>
-				{carrito.map((item)=> <p key={item.id}><b>Nombre: </b>{item.nombre} <b>Cantidad: </b>{item.cantidad} <b>Subtotal: $</b> {subtotalPrecioProducto(item)}
-					<button onClick={()=>removerDelCarrito(item.id)}>QUITAR</button>
-				</p>)}
-				<p><b>TOTAL: $</b>{totalPrecioCarrito(carrito)}</p>
+		<h1>Carrito:</h1>
+		<div className="container">
+			<div className="row">
+				<div className="col">
+					{carrito.map((item)=> <CartItem key={item.id} item={item}/> )}
+				</div>
+				<div className="col">
+					<p><b>TOTAL: $</b>{totalPrecioCarrito(carrito)}</p>
+						<Link to='/checkout'><button>FINALIZAR COMPRA</button></Link>
+						<button onClick={vaciarCarrito}>VACIAR CARRITO</button>
+						<Link to='/'><button>VOLVER A TIENDA</button></Link>
+				</div>
 			</div>
-			<Link to='/checkout'><button>FINALIZAR COMPRA</button></Link>
-			<button onClick={vaciarCarrito}>VACIAR CARRITO</button>
-			<Link to='/'><button>VOLVER A TIENDA</button></Link>
-		</>
-		
+		</div>
+	</>
 	);
 };
 

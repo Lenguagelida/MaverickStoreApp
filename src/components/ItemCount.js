@@ -10,7 +10,7 @@ export const ItemCount = ({cantInicial, stock, cantCarrito}) => {
         setCantidad(cantidad -1);
     }
 
-    const funcOnClick = () =>{
+    const funcOnClick = (e) =>{
         cantCarrito(cantidad);
     }
 	return(

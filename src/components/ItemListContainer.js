@@ -25,7 +25,7 @@ const ItemListContainer = () => {
     return (
         <section className="catalogo">
             <div className="container d-flex p-3">
-                <div id="seccion-catalogo" className="row row-cols-1 row-cols-md-3 g-4">
+                <div id="seccion-catalogo" className="row d-flex justify-content-center row-cols-1 row-cols-md-3 g-4">
                     <ItemList catalogo={catalogo}/>
                 </div>
             </div>
