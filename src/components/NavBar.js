@@ -26,20 +26,11 @@ const NavBar = () => {
                             <Link className="nav-link active" aria-current="page" to={`/`}>Inicio</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Marcas</a>
+                            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href='/#'>Marcas</a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {marcas.map((marca)=>
                                     <NavLink className="dropdown-item" key={marca.id} to={`/marcas/${marca.nombre}`}>{marca.nombre}</NavLink>
                                 )}
-                                {/* <li>
-                                    <NavLink className="dropdown-item" to={`/marcas/Airfix`}>Airfix</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className="dropdown-item" to={`/marcas/Hasegawa`}>Hasegawa</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className="dropdown-item" to={`/marcas/Revell`}>Revell</NavLink>
-                                </li> */}
                             </ul>
                         </li>
                     </ul>

@@ -46,7 +46,7 @@ const ItemDetail = ({item}) => {
                                     </Link>
                                 </>
                                 :
-                                <ItemCount cantInicial={1} stock={5} cantCarrito={cantidadCarrito} />
+                                <ItemCount cantInicial={1} stock={item.stock} cantCarrito={cantidadCarrito} />
                             }
                         </div>
                     </div>
