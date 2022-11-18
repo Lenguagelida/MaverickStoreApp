@@ -89,7 +89,7 @@ const Checkout = () => {
                             <label htmlFor="floatingInput3">Email:</label>
                         </div>
                         <div>
-                            <button type="submit">Enviar Orden</button>
+                            <button className='btn btn-outline-primary flex-shrink-0 mx-1' type="submit">Enviar Orden</button>
                         </div>                
                     </form>
                 }

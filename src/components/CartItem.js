@@ -20,7 +20,9 @@ const CartItem = ({ item }) => {
                             <p className="text-center fs-6">{item.nombre}</p>
                             <p className="text-center fs-6">Cantidad: {item.cantidad}</p>
                             <p className="text-center fs-6">Subtotal: ${subtotalPrecioProducto(item)}</p>
-                            <button onClick={handleClick}><i className="bi bi-trash-fill"></i></button>
+                            <button className='btn btn-outline-primary flex-shrink-0 mx-1'
+                                onClick={handleClick}><i className="bi bi-trash-fill"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
